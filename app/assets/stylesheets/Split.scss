@@ -1,0 +1,52 @@
+.Feature {
+  height: 100vh;
+  display: flex;
+  padding: 10px;
+
+  .Feature-block {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: transparent;
+    transition: color 1s ease;
+    border-radius: 20px;
+
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+
+    &.left {
+      // background-image: url(../images/cover1.jpg);
+      background: springgreen;
+      transition: background 0.5s ease;
+
+      &:hover {
+        background: #121212;
+      }
+    }
+
+    &.right {
+      // background-image: url(../images/research.jpg);
+      background: white;
+      transition: background 0.5s ease;
+
+      &:hover {
+        background: #121212;
+      }
+    }
+
+    .Feature-link {
+      font-size: 43px;
+      line-height: 46px;
+      text-transform: uppercase;
+      margin: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%);
+    }
+  }
+}

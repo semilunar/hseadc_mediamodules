@@ -1,7 +1,47 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# require 'faker'
 #
-# Examples:
+# Rake::Task['db:drop'].invoke
+# Rake::Task['db:create'].invoke
+# Rake::Task['db:migrate'].invoke
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# @sections = [
+#   'Секция 1. Mobile', 'Секция 2. Web'
+# ]
+#
+# @blocks = [
+#   [ "Блок 1", "1" ],
+#   [ "Блок 2", "2" ],
+#   [ "Блок 3", "3" ],
+#   [ "Блок 4", "4" ],
+#   [ "Блок 5", "5" ],
+#   [ "Блок 6", "6" ]
+# ]
+#
+# @phrases = [
+#   'Заголовок',
+#   'Подзаголовок',
+#   'Параграф текста',
+#   'Изображение',
+#   'Видео'
+# ]
+#
+# def seed_data
+
+#
+# def create_boards
+#   @boards.each do |board|
+#     user = User.all.sample
+#     board = user.boards.create!(title: board[0], description: board[1])
+#   end
+# end
+#
+# def create_links
+#   @links.each do |link|
+#     board = Board.all.sample
+#     user = User.find(board.user_id)
+#     l = user.links.create!(url: link, board_id: board.id)
+#
+#   end
+# end
+#
+# seed_data

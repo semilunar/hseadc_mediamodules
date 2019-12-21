@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+
+  body {
+    height: 10000px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background-color: #121212;
+  }
+
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+    background-color: #121212;
+  }
+}

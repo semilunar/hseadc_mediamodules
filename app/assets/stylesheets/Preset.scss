@@ -1,0 +1,29 @@
+.Preset {
+  height: 900px;
+  position: relative;
+  background: #121212;
+
+  &.VideoMask {
+    background: #33ff00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.HorizontalScroll {
+    height: 600px;
+  }
+
+  h1 {
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    left: 20px;
+    color: #ffffff;
+    opacity: 0.87;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.5px;
+  }
+}

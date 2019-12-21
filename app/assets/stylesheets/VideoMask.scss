@@ -1,0 +1,27 @@
+.VideoMask {
+  video {
+    height: 820px;
+    width: 1330px;
+
+    &.maskRombus {
+      -webkit-mask-box-image: image-url('maskRombus.svg');
+    }
+
+    &.maskCircle {
+      -webkit-mask-box-image: image-url('maskCircle.svg');
+    }
+
+    &.maskStar {
+      -webkit-mask-box-image: image-url('maskStar.svg');
+    }
+
+    &.maskCube {
+      -webkit-mask-box-image: image-url('maskCube.svg');
+    }
+  }
+
+  .ButtonSet {
+    color: white;
+    position: absolute;
+  }
+}

@@ -1,0 +1,29 @@
+.horizontal-scroll-wrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  max-height: 1440px;
+  margin: 0;
+  background: #121212;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translate(420px, -301px);
+
+  &.rectangles {
+    top: 0px;
+    padding: 100px 0 0 0;
+
+    div {
+      display: block;
+      width: 400px;
+      height: 550px;
+      margin: 0px 255px;
+      padding: 0;
+      background: #fff;
+      transform: rotate(90deg) translateY(80px);
+      transform-origin: right top;
+    }
+  }
+}
