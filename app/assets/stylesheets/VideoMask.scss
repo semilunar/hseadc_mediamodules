@@ -1,29 +1,36 @@
 .VideoMask {
-  video {
-    height: 820px;
-    width: 1330px;
-
-    &.maskDiamond {
+  .maskDiamond {
+    iframe {
       -webkit-mask-box-image: image-url('maskDiamond.svg');
     }
+  }
 
-    &.maskEllipse {
+  .maskEllipse {
+    iframe {
       -webkit-mask-box-image: image-url('maskEllipse.svg');
     }
+  }
 
-    &.maskStar {
+  .maskStar {
+    iframe {
       -webkit-mask-box-image: image-url('maskStar.svg');
     }
+  }
 
-    &.maskStar2 {
+  .maskStar2 {
+    iframe {
       -webkit-mask-box-image: image-url('maskStar2.svg');
     }
+  }
 
-    &.maskPolygon {
+  .maskPolygon {
+    iframe {
       -webkit-mask-box-image: image-url('maskPolygon.svg');
     }
+  }
 
-    &.maskHeart {
+  .maskHeart {
+    iframe {
       -webkit-mask-box-image: image-url('maskHeart.svg');
     }
   }

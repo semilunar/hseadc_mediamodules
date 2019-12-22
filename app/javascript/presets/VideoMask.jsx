@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactPlayer from 'react-player'
 
 import ButtonSet from '../controls/ButtonSet'
 
@@ -28,9 +29,16 @@ export default class VideoMask extends React.Component {
 
     return (
       <div className="Preset VideoMask">
-        <video autoPlay loop muted className={mask}>
-          <source src="video.mp4" type="video/mp4" />
-        </video>
+        <ReactPlayer
+          className={mask}
+          url="https://vimeo.com/344429704"
+          playing
+          loop={true}
+          controls={false}
+          muted={true}
+          width="1440px"
+          height="820px"
+        />
         <ButtonSet set={set} value={mask} handleClick={this.handleClick} />
       </div>
     )
