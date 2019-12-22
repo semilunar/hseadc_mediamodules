@@ -32,6 +32,7 @@ default: &default
     - .ttf
     - .woff
     - .woff2
+    - .mp4
 
   extensions:
     - .jsx
@@ -48,6 +49,7 @@ default: &default
     - .gif
     - .jpeg
     - .jpg
+    - .mp4
 
 development:
   <<: *default
@@ -72,9 +74,9 @@ development:
     quiet: false
     pretty: false
     headers:
-      "Access-Control-Allow-Origin": "*"
+      'Access-Control-Allow-Origin': '*'
     watch_options:
-      ignored: "**/node_modules/**"
+      ignored: '**/node_modules/**'
 
 test:
   <<: *default

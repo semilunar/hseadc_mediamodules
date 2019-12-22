@@ -1,0 +1,13 @@
+.scroll {
+  margin: auto;
+  width: 90vw;
+  height: 60vw;
+  background-size: cover;
+  overflow: scroll;
+  background-color: #fff;
+
+  .pics {
+    width: 100%;
+    height: 100%;
+  }
+}

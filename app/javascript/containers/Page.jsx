@@ -4,6 +4,8 @@ import VideoMask from '../presets/VideoMask'
 import HorizontalScroll from '../presets/HorizontalScroll'
 import Split from '../presets/Split'
 import Flip from '../presets/Flip'
+import Scroll from '../presets/Scroll'
+import CustomVideo from '../presets/CustomVideo'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -14,6 +16,7 @@ import MagicSliderDots from 'react-magic-slider-dots'
 import Draggable, { DraggableCore } from 'react-draggable'
 
 import Symbol from '../../assets/images/symbol.svg'
+
 import Slider1 from '../../assets/images/slider1.jpg'
 import Slider2 from '../../assets/images/slider2.jpg'
 import Slider3 from '../../assets/images/slider3.jpg'
@@ -94,6 +97,10 @@ export default class Page extends React.Component {
             </div>
           </Slider>
         </div>
+
+        <Scroll />
+
+        <CustomVideo />
       </div>
     )
   }

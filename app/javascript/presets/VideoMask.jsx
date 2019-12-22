@@ -37,7 +37,7 @@ export default class VideoMask extends React.Component {
           controls={false}
           muted={true}
           width="1440px"
-          height="820px"
+          height="885px"
         />
         <ButtonSet set={set} value={mask} handleClick={this.handleClick} />
       </div>
