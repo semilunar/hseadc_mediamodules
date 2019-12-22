@@ -1,6 +1,7 @@
 .Feature {
   height: 100vh;
   display: flex;
+  padding: 20px;
 
   .Feature-block {
     width: 50%;
@@ -10,7 +11,7 @@
     position: relative;
     color: transparent;
     transition: color 1s ease;
-    // border-radius: 20px;
+    border-radius: 20px;
 
     &:hover {
       color: #fff;
