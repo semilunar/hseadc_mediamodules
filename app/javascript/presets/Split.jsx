@@ -6,10 +6,10 @@ export default class Split extends React.Component {
       <div className="Preset Split">
         <section className="Feature">
           <div className="Feature-block left">
-            <a className="Feature-link left">Постдипломная</a>
+            <a className="Feature-link left">Книга</a>
           </div>
           <div className="Feature-block right">
-            <a className="Feature-link right">Исследования</a>
+            <a className="Feature-link right">Постеры</a>
           </div>
         </section>
       </div>

@@ -1,7 +1,6 @@
 .Feature {
   height: 100vh;
   display: flex;
-  padding: 10px;
 
   .Feature-block {
     width: 50%;
@@ -11,7 +10,7 @@
     position: relative;
     color: transparent;
     transition: color 1s ease;
-    border-radius: 20px;
+    // border-radius: 20px;
 
     &:hover {
       color: #fff;
@@ -19,9 +18,10 @@
     }
 
     &.left {
-      // background-image: url(../images/cover1.jpg);
-      background: springgreen;
+      background: #fff;
+      background-image: url(split.png);
       transition: background 0.5s ease;
+      background-size: cover;
 
       &:hover {
         background: #121212;
@@ -29,9 +29,10 @@
     }
 
     &.right {
-      // background-image: url(../images/research.jpg);
       background: white;
+      background-image: url(split2.png);
       transition: background 0.5s ease;
+      background-size: cover;
 
       &:hover {
         background: #121212;
