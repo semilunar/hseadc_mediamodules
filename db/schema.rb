@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_11_17_102545) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blocks", force: :cascade do |t|
     t.integer "order"
     t.datetime "created_at", precision: 6, null: false
