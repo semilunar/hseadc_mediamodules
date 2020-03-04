@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from '../controls/Button'
 
-import Koinonia from './Koinonia.mp4'
+import Koinonia from '../../assets/videos/Koinonia.mp4'
 
 export default class CustomVideo extends React.Component {
   constructor(props) {

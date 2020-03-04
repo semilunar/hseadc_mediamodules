@@ -32,7 +32,6 @@ export default class Page extends React.Component {
         <Split />
         <HorizontalScroll />
         <Flip />
-
         <SliderStory />
       </div>
     )
