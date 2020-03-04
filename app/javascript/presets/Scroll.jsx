@@ -34,10 +34,10 @@ export default class Scroll extends React.Component {
     if (hover) {
       const scrollY = window.scrollY
       const scrollTop = this.myRef.current.scrollTop
-      console.log(
-        `handleScroll, window.scrollY: ${scrollY}, imgList.length: ${imgList.length}, height: ${height}, myRef.scrollTop: ${scrollTop}`
-      )
-      console.log('REZ: ', scrollTop % height)
+      // console.log(
+      //   `handleScroll, window.scrollY: ${scrollY}, imgList.length: ${imgList.length}, height: ${height}, myRef.scrollTop: ${scrollTop}`
+      // )
+      // console.log('REZ: ', scrollTop % height)
       // activeImg = imgList[i]
       // console.log(Math.round(scrollY / (scrollY / imgList.length)));
 
@@ -82,7 +82,7 @@ export default class Scroll extends React.Component {
     this.setState({
       hover: hover
     })
-    console.log('Hover!', hover)
+    // console.log('Hover!', hover)
   }
 
   render() {

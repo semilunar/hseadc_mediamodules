@@ -9,6 +9,7 @@ import CustomVideo from '../presets/CustomVideo'
 import SliderDots from '../presets/SliderDots'
 import SliderArrows from '../presets/SliderArrows'
 import SliderStory from '../presets/SliderStory'
+import TabMenu from '../presets/TabMenu'
 
 import Draggable, { DraggableCore } from 'react-draggable'
 
@@ -21,7 +22,7 @@ export default class Page extends React.Component {
     }
     return (
       <div className="app">
-        <Draggable>
+        {/*<Draggable>
           <div className="draggable" style={dragStyle}></div>
         </Draggable>
         <VideoMask />
@@ -32,7 +33,8 @@ export default class Page extends React.Component {
         <Split />
         <HorizontalScroll />
         <Flip />
-        <SliderStory />
+        <SliderStory />*/}
+        <TabMenu />
       </div>
     )
   }
