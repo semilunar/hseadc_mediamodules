@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # resources :pages
   root 'pages#index'
-  # get 'welcome/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'tabvideo', to: 'tab_video#get_links_to_videos'
 end

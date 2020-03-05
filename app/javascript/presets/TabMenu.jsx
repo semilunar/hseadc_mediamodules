@@ -7,32 +7,32 @@ export default class TabMenu extends React.Component {
     super(props)
 
     this.state = {
-      tabs: [
-        {
-          title: 'Лендинг',
-          link: 'https://www.youtube.com/watch?v=bWLAf8z6CWM'
-        },
-        {
-          title: 'Реклама',
-          link: 'https://www.youtube.com/watch?v=YrdNfX7W38U'
-        },
-        {
-          title: 'Далеко',
-          link: 'https://www.youtube.com/watch?v=m7A4uy6Nw0k'
-        },
-        {
-          title: 'Видео',
-          link: 'https://www.youtube.com/watch?v=dylbA7M3B5Y'
-        }
-      ],
+      tabs: null,
       current: null,
       url: null
     }
   }
 
   componentWillMount = () => {
-    const [preview] = this.state.tabs
-    this.setState({ current: preview.title, url: preview.link })
+    // const [preview] = this.state.tabs
+    // this.setState({ current: preview.title, url: preview.link })
+    const url = 'http://localhost:3000'
+    const csrfToken = document.querySelector("[name='csrf-token']").content
+    console.log('auth.js')
+
+    console.log('FUNCTION')
+    fetch(`${url}/tabvideo`, {
+      method: 'GET',
+      headers: {
+        'X-CSRF-Token': csrfToken,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(({ tabs } = parsed) => {
+        const preview = tabs[1]
+        this.setState({ tabs, current: preview.title, url: preview.link })
+      })
   }
 
   handleTab = (link, title) => {
@@ -42,12 +42,23 @@ export default class TabMenu extends React.Component {
 
   render() {
     const { tabs, url, current } = this.state
-    const displayUrl = url && url.replace('watch?v=', 'embed/') + '?controls=0'
+    const displayUrl =
+      url &&
+      url
+        .replace('watch?v=', 'embed/')
+        .replace('youtu.be', 'www.youtube.com/embed/') + '?controls=0'
+
     return (
       <div className="Preset TabMenu">
         <section className="Split">
           <div className="Split-half left">
-            <TabSet current={current} tabs={tabs} handleTab={this.handleTab} />
+            {tabs && (
+              <TabSet
+                current={current}
+                tabs={tabs}
+                handleTab={this.handleTab}
+              />
+            )}
           </div>
           <div className="Split-half right">
             {displayUrl && (

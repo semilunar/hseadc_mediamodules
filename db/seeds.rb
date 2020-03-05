@@ -1,3 +1,8 @@
+TabVideo.create(title: 'Что-то с женщиной', link: 'https://www.youtube.com/watch?v=eZwl96QufuQ')
+TabVideo.create(title: 'Мама Отличника',    link: 'https://youtu.be/labQqXbp_HU')
+TabVideo.create(title: 'Симс Беременность', link: 'https://www.youtube.com/embed/Vtr2jFJjNqI')
+TabVideo.create(title: 'Ne Me Quitte Pas',  link: 'https://www.youtube.com/watch?v=BWXWivwhi14')
+
 # require 'faker'
 #
 # Rake::Task['db:drop'].invoke
