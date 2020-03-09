@@ -1,2 +1,0 @@
-class TabVideo < ApplicationRecord
-end

@@ -1,6 +1,6 @@
 class TabAttachmentController < ApplicationController
   def get_links_to_videos
-    allLinks = TabVideo.all
+    allLinks = TabAttachment.all
 
     render json: { tabs: allLinks }
   end
