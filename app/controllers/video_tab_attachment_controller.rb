@@ -1,4 +1,4 @@
-class TabVideoController < ApplicationController
+class VideoTabAttachmentController < ApplicationController
   # def get_links_to_videos
   #   allLinks = TabVideo.all
   #
