@@ -1,0 +1,2 @@
+class ImageTabAttachment < TabAttachment
+end

@@ -1,0 +1,2 @@
+class TabAttachment < ApplicationRecord
+end

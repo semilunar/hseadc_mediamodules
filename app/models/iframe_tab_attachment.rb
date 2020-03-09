@@ -1,0 +1,2 @@
+class IframeTabAttachment < TabAttachment
+end

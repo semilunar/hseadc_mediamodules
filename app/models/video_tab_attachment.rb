@@ -1,0 +1,2 @@
+class VideoTabAttachment < TabAttachment
+end
