@@ -22,7 +22,7 @@ export default class TabMenu extends React.Component {
     console.log('auth.js')
 
     console.log('FUNCTION')
-    fetch(`${url}/tabattachment`, {
+    fetch(`${url}/videotabattachment`, {
       method: 'GET',
       headers: {
         'X-CSRF-Token': csrfToken,
