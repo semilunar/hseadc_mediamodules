@@ -11,6 +11,8 @@ import SliderArrows from '../presets/SliderArrows'
 import SliderStory from '../presets/SliderStory'
 import TabMenu from '../presets/TabMenu'
 
+import ImgUploader from '../controls/ImgUploader'
+
 import Draggable, { DraggableCore } from 'react-draggable'
 
 import Symbol from '../../assets/images/symbol.svg'
@@ -33,8 +35,10 @@ export default class Page extends React.Component {
         <Split />
         <HorizontalScroll />
         <Flip />
-        <SliderStory />*/}
+        <SliderStory />
+        */}
         <TabMenu />
+        <ImgUploader />
       </div>
     )
   }

@@ -14,9 +14,6 @@ export default class TabMenu extends React.Component {
   }
 
   componentWillMount = () => {
-    // const [preview] = this.state.tabs
-    // this.setState({ current: preview.title, url: preview.link })
-
     const url = 'http://localhost:3000'
     const csrfToken = document.querySelector("[name='csrf-token']").content
     console.log('auth.js')
