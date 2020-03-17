@@ -11,4 +11,11 @@ class ImageTabAttachmentController < ApplicationController
       redirect_to :back
     end
   end
+
+  def show
+    img = ImageTabAttachment.last
+
+    render json: { img: img.as_json }
+  end
+
 end

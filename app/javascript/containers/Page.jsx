@@ -36,8 +36,8 @@ export default class Page extends React.Component {
         <HorizontalScroll />
         <Flip />
         <SliderStory />
-        */}
         <TabMenu />
+        */}
         <ImgUploader />
       </div>
     )

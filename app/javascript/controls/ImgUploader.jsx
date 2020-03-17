@@ -15,16 +15,31 @@ const ImageUploader = props => {
         headers: {
           'X-CSRF-Token': csrfToken,
           // 'Content-Type': 'multipart/form-data',
-          'Content-Type': 'image/jpeg'
+          // 'Content-Type': 'image/jpeg'
+          'Content-Type': 'application/json'
         },
         body: formData
       })
     }
   }
 
+  const handleRenderImg = target => {
+    fetch(`${url}/renderimage.json`)
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        console.log(data)
+      })
+  }
+
   return (
     <div className="ImageUploader" style={{ background: '#FFF' }}>
       <input type="file" onChange={e => handle_up(e.target)} />
+      <div>
+        <h1 onClick={handleRenderImg}>Get last image</h1>
+        <img id="rendered" />
+      </div>
     </div>
   )
 }
