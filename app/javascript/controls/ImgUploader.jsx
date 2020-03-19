@@ -8,15 +8,12 @@ const ImageUploader = props => {
     if (target.files && target.files[0]) {
       const formData = new FormData()
       formData.append('image', target.files[0])
-      // formData.append('title', target.files[0].name)
       fetch(`${url}/newimage`, {
         credentials: 'same-origin',
         method: 'POST',
         headers: {
-          'X-CSRF-Token': csrfToken,
-          // 'Content-Type': 'multipart/form-data',
-          // 'Content-Type': 'image/jpeg'
-          'Content-Type': 'application/json'
+          'X-CSRF-Token': csrfToken
+          // 'Content-Type': 'application/json'
         },
         body: formData
       })
@@ -25,11 +22,10 @@ const ImageUploader = props => {
 
   const handleRenderImg = target => {
     fetch(`${url}/renderimage.json`)
-      .then(response => {
-        return response.json()
-      })
+      .then(response => response.json())
       .then(data => {
         console.log(data)
+        document.getElementById('rendered').src = data.img.link.url
       })
   }
 

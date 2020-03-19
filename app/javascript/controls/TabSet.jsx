@@ -10,6 +10,7 @@ const TabSet = props => {
     return (
       <Tab
         n={n}
+        position={i + 1}
         current={current}
         title={tab.title}
         link={tab.link}

@@ -6,10 +6,10 @@ export default class Split extends React.Component {
       <div className="Preset">
         <section className="Split">
           <div className="Split-half left">
-            <a className="Split-link">Книга</a>
+            <a className="Tab-title">Книга</a>
           </div>
           <div className="Split-half right">
-            <a className="Split-link right">Постеры</a>
+            <a className="Tab-title right">Постеры</a>
           </div>
         </section>
       </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_151428) do
+ActiveRecord::Schema.define(version: 2020_03_18_102338) do
 
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_151428) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "type", default: "VideoTabAttachment"
+    t.integer "position"
   end
 
 end

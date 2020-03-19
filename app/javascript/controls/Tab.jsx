@@ -1,11 +1,10 @@
 import classnames from 'classnames'
 import React from 'react'
+import TabControls from './TabControls'
 
-const Tab = props => {
-  const { title, link, handleTab, current, n } = props
-
+const Tab = ({ title, link, handleTab, current, n, position }) => {
   const classes = classnames({
-    ['Split-block']: true,
+    ['Tab-block']: true,
     active: title === current
   })
 
@@ -15,7 +14,8 @@ const Tab = props => {
       style={{ height: `calc(100% / ${n} - 1px)` }}
       onClick={() => handleTab(link, title)}
     >
-      <a className="Split-link">{title}</a>
+      <a className="Tab-title">{title}</a>
+      <TabControls position={position} />
     </div>
   )
 }
