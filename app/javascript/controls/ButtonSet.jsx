@@ -25,7 +25,7 @@ export default class ButtonSet extends React.Component {
     return (
       <div className="ButtonSet">
         <div className="content">
-          <h3>Маска</h3>
+          <h3>Mask</h3>
           <div className="buttons">{buttons}</div>
         </div>
       </div>

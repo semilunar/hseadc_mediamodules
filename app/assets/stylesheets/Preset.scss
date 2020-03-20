@@ -1,11 +1,15 @@
+.Preset-container {
+  position: relative;
+}
+
 .Preset {
   height: 900px;
   position: relative;
   background: #121212;
-  margin-bottom: 120px;
+  // margin-bottom: 120px;
 
   &.VideoMask {
-    background: #33ff00;
+    // background: #00ff29;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +21,7 @@
   }
 
   &.Story {
-    background: #33ff00;
+    background: #00ff29;
   }
 
   &.Flip,

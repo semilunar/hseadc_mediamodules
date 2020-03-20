@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Button from '../controls/Button'
+import LinkUploader from '../controls/LinkUploader'
 
 import Koinonia from '../../assets/videos/Koinonia.mp4'
 
@@ -10,7 +11,8 @@ export default class CustomVideo extends React.Component {
     this.state = {
       video: null,
       paused: false,
-      playButton: true
+      playButton: true,
+      displayLinkUploader: false
     }
 
     this.togglePlay = this.togglePlay.bind(this)
@@ -42,21 +44,47 @@ export default class CustomVideo extends React.Component {
     })
   }
 
+  toggleLinkUploader = bool => {
+    this.setState({ displayLinkUploader: bool })
+  }
+
   render() {
-    const { paused, playButton } = this.state
+    const { paused, playButton, displayLinkUploader } = this.state
 
     return (
       <div className="Preset CustomVideo">
-        <video
-          className="viewer"
-          ref="video"
-          autoPlay
-          muted
-          loop
-          src={Koinonia}
-          onClick={this.togglePlay}
-        />
-        <Button option={true} current={paused} handleClick={this.togglePlay} />
+        <div className="Preset-container">
+          <video
+            className="viewer"
+            ref="video"
+            autoPlay
+            muted
+            loop
+            src={Koinonia}
+            onClick={this.togglePlay}
+          />
+
+          <Button
+            custClass="Button-play"
+            option={true}
+            current={paused}
+            handleClick={this.togglePlay}
+          />
+
+          <div className="placeholder">
+            <div className="img-placeholder" />
+            <div
+              className="link-upload-control"
+              onClick={() => this.toggleLinkUploader(true)}
+            >
+              Add video<span></span>
+            </div>
+          </div>
+
+          {displayLinkUploader && (
+            <LinkUploader toggleLinkUploader={this.toggleLinkUploader} />
+          )}
+        </div>
       </div>
     )
   }

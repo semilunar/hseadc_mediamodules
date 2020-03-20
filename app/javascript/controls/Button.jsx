@@ -7,12 +7,13 @@ export default class Button extends React.Component {
   }
 
   render() {
-    const { option, current, handleClick, value } = this.props
+    const { option, current, handleClick, value, custClass } = this.props
 
     const classes = classnames({
       Button: true,
       [`${option}`]: true,
-      on: option == current
+      on: option == current,
+      [`${custClass}`]: custClass
     })
 
     return (

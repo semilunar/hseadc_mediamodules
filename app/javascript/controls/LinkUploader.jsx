@@ -19,13 +19,16 @@ const LinkUploader = ({ toggleLinkUploader }) => {
       body: { position, link }
     })
   }
+  const handleClick = e => {
+    e.stopPropagation()
+  }
 
   return (
     <div
       className="link-uploader-darken"
       onClick={() => toggleLinkUploader(false)}
     >
-      <div className="link-uploader-container" onClick={true}>
+      <div className="link-uploader-container" onClick={handleClick}>
         <div className="header">
           <h2>Add link</h2>
           <div className="cross" onClick={() => toggleLinkUploader(false)} />
@@ -37,6 +40,7 @@ const LinkUploader = ({ toggleLinkUploader }) => {
           onChange={e => setLink(e.target.value)}
         />
         <Button
+          custClass="Button-submit"
           option={true}
           current={!!link}
           handleClick={linkSubmit}

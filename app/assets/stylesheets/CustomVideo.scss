@@ -1,25 +1,32 @@
 .CustomVideo {
-  height: 730px !important;
+  .img-placeholder {
+    background-image: url('custom-play-placeholder.svg') !important;
+    width: 120px !important;
+    height: 120px !important;
+  }
 
   video {
-    position: absolute;
+    width: 1150px;
+    height: 710px !important;
+    position: relative;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
   }
 
-  .Button {
-    width: 300px;
-    height: 300px;
+  .Button-play {
+    width: 120px;
+    height: 120px;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%) translateY(-27px);
     background-color: #121212;
     background-image: url('symbolPlay.svg');
     background-size: cover;
     opacity: 0;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+
     transition: opacity 0.2s ease;
 
     &:hover {

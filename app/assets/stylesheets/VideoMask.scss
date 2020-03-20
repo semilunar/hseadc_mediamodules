@@ -1,4 +1,8 @@
 .VideoMask {
+  & > div {
+    background: #00ff29;
+  }
+
   .maskDiamond {
     iframe {
       -webkit-mask-box-image: image-url('maskDiamond.svg');
@@ -39,9 +43,8 @@
     position: absolute;
     width: 144px;
     height: 204px;
-    left: 65px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 25px;
+    top: 22px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
 
@@ -50,9 +53,10 @@
 
       h3 {
         width: 84px;
+        font-weight: 500;
         margin-bottom: 14px;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 100%;
         text-align: center;
       }
@@ -109,6 +113,57 @@
           }
         }
       }
+    }
+  }
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img-placeholder {
+    background-image: url('placeholder-video.svg');
+    background-size: cover;
+    margin-bottom: 22px;
+    width: 92px;
+    height: 92px;
+  }
+
+  .link-upload-control {
+    background: #e9e9e9;
+    height: 30px;
+    width: 106px;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.38);
+    line-height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.64);
+
+      span {
+        fill: rgba(0, 0, 0, 0.64);
+      }
+    }
+
+    span {
+      background-image: url('link-preview.svg');
+      background-size: cover;
+      margin-left: 5px;
+      width: 15px;
+      height: 15px;
+      display: inline-block;
     }
   }
 }

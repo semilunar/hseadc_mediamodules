@@ -27,17 +27,18 @@ export default class Page extends React.Component {
         {/*<Draggable>
           <div className="draggable" style={dragStyle}></div>
         </Draggable>
-        <VideoMask />
         <CustomVideo />
         <Scroll />
         <SliderDots />
         <SliderArrows />
         <Split />
         <HorizontalScroll />
-        <Flip />
         <SliderStory />
-        */}
         <TabMenu />
+        */}
+
+        <VideoMask />
+        <CustomVideo />
       </div>
     )
   }
