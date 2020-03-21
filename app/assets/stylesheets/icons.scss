@@ -1,0 +1,42 @@
+.icon {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-bottom: 5.2px;
+
+  &:hover {
+    .icon-vector {
+      opacity: 1 !important;
+    }
+  }
+
+  .icon-vector {
+    opacity: 0.6;
+    background-size: cover;
+    width: 14.5px;
+    height: 14.5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+  }
+
+  .delete-control {
+    background-image: url('icon-delete.svg') !important;
+    width: 11.05px !important;
+    height: 14.21px !important;
+  }
+
+  .icon-change-bg {
+    background-image: url('icon-change-bg-black.svg');
+  }
+
+  .link-upload-control {
+    background-image: url('icon-link-upload.svg');
+  }
+}

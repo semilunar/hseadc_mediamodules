@@ -2,6 +2,25 @@
   position: relative;
 }
 
+.tools {
+  position: absolute;
+  left: 242px;
+  top: 50px;
+  display: flex;
+
+  .icons {
+    margin-top: 5.8px;
+    margin-right: 20px;
+  }
+
+  .line {
+    height: 710px;
+    width: 1px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+      rgba(255, 255, 255, 0.12);
+  }
+}
+
 .Preset {
   height: 900px;
   position: relative;
@@ -18,10 +37,6 @@
 
   &.HorizontalScroll {
     height: 600px;
-  }
-
-  &.Story {
-    background: #00ff29;
   }
 
   &.Flip,

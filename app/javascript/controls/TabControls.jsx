@@ -53,17 +53,18 @@ export default class TabControls extends Component {
           onChange={e => handleUp(e.target)}
         />
         <label for="file"></label>
-        <div
-          className="icon link-upload-control"
-          onClick={() => this.toggleLinkUploader(true)}
-        ></div>
+        <div className="icon" onClick={() => this.toggleLinkUploader(true)}>
+          <div className="icon-vector link-upload-control"></div>
+        </div>
         {displayLinkUploader && (
           <LinkUploader
             position={position}
             toggleLinkUploader={this.toggleLinkUploader}
           />
         )}
-        <div className="icon delete-control"></div>
+        <div className="icon">
+          <div className="icon-vector delete-control"></div>
+        </div>
       </div>
     )
   }

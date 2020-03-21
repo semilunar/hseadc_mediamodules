@@ -19,6 +19,7 @@ const LinkUploader = ({ toggleLinkUploader }) => {
       body: { position, link }
     })
   }
+
   const handleClick = e => {
     e.stopPropagation()
   }

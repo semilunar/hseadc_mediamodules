@@ -33,12 +33,11 @@ export default class Page extends React.Component {
         <SliderArrows />
         <Split />
         <HorizontalScroll />
-        <SliderStory />
-        <TabMenu />
-        */}
-
         <VideoMask />
         <CustomVideo />
+        */}
+        <TabMenu />
+        <SliderStory />
       </div>
     )
   }
