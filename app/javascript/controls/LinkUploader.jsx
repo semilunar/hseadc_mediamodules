@@ -5,7 +5,7 @@ import Button from './Button'
 const url = 'http://localhost:3000'
 const csrfToken = document.querySelector("[name='csrf-token']").content
 
-const LinkUploader = ({ toggleLinkUploader }) => {
+const LinkUploader = ({ toggleLinkUploader, changeTabPreview, position }) => {
   const [link, setLink] = useState('')
 
   const linkSubmit = () => {
@@ -16,8 +16,14 @@ const LinkUploader = ({ toggleLinkUploader }) => {
         'X-CSRF-Token': csrfToken,
         'Content-Type': 'application/json'
       },
-      body: { position, link }
+      body: JSON.stringify({ position, link })
     })
+      .then(res => res.json())
+      .then(data => {
+        const url = data.link.link
+        changeTabPreview('iframe', url)
+        toggleLinkUploader(false)
+      })
   }
 
   const handleClick = e => {

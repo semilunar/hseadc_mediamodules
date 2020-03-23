@@ -1,6 +1,7 @@
 import React from 'react'
 
 import TabSet from '../controls/TabSet'
+import TabPreview from '../controls/TabPreview'
 
 export default class TabMenu extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ export default class TabMenu extends React.Component {
     this.state = {
       tabs: null,
       current: null,
-      url: null
+      srcUrl: null,
+      preview: 'default'
     }
   }
 
@@ -38,11 +40,17 @@ export default class TabMenu extends React.Component {
     console.log(this.state.current)
   }
 
+  changeTabPreview = (preview, srcUrl) => {
+    this.setState({ preview, srcUrl })
+  }
+
+  changePre
+
   render() {
-    const { tabs, url, current } = this.state
+    const { tabs, srcUrl, current, preview } = this.state
     const displayUrl =
-      url &&
-      url
+      srcUrl &&
+      srcUrl
         .replace('watch?v=', 'embed/')
         .replace('youtu.be', 'www.youtube.com/embed/') + '?controls=0'
 
@@ -52,6 +60,7 @@ export default class TabMenu extends React.Component {
           <div className="Split-half left">
             {tabs && (
               <TabSet
+                changeTabPreview={this.changeTabPreview}
                 current={current}
                 tabs={tabs}
                 handleTab={this.handleTab}
@@ -59,17 +68,7 @@ export default class TabMenu extends React.Component {
             )}
           </div>
           <div className="Split-half right">
-            {displayUrl && (
-              <iframe
-                src={displayUrl}
-                frameborder="0"
-                controls="0"
-                autoplay="0"
-                muted
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            )}
+            <TabPreview preview={preview} displayUrl={displayUrl} />
           </div>
         </section>
       </div>

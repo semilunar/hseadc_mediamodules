@@ -2,7 +2,15 @@ import classnames from 'classnames'
 import React, { useState } from 'react'
 import TabControls from './TabControls'
 
-const Tab = ({ title, link, handleTab, current, n, position }) => {
+const Tab = ({
+  title,
+  link,
+  handleTab,
+  current,
+  n,
+  position,
+  changeTabPreview
+}) => {
   const [newTitle, setNewTitle] = useState(title)
 
   const classes = classnames({
@@ -30,7 +38,7 @@ const Tab = ({ title, link, handleTab, current, n, position }) => {
         <a className="Tab-link-preview">{link}</a>
       </div>
 
-      <TabControls position={position} />
+      <TabControls changeTabPreview={changeTabPreview} position={position} />
     </div>
   )
 }

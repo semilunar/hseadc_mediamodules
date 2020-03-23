@@ -3,7 +3,7 @@ import React from 'react'
 import Tab from './Tab'
 
 const TabSet = props => {
-  const { tabs, handleTab, current } = props
+  const { tabs, handleTab, current, changeTabPreview } = props
   const n = tabs.length
 
   const renderTabs = tabs.map((tab, i) => {
@@ -15,6 +15,7 @@ const TabSet = props => {
         title={tab.title}
         link={tab.link}
         key={i}
+        changeTabPreview={changeTabPreview}
         handleTab={handleTab}
       />
     )

@@ -17,15 +17,10 @@
       left: 50%;
 
       .slick-arrow {
-        background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.1)
-          ),
-          rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.36);
 
         &:hover {
-          background: #121212;
+          background: #fff;
         }
       }
 
@@ -43,7 +38,8 @@
         top: 0px;
         padding: 10px;
         width: 100% !important;
-        height: 5px;
+        height: 4px;
+        border-radius: 5px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -58,7 +54,7 @@
 
           li {
             width: 97px;
-            height: 5px;
+            height: 4px;
             margin: 0;
 
             &.slick-active {
@@ -70,17 +66,17 @@
 
             button::before,
             button:before {
+              border-radius: 5px;
               width: 88px;
-              height: 5px;
+              height: 4px;
               background: #fff;
-              opacity: 0.75;
-              border-radius: 0;
+              opacity: 0.4;
             }
           }
 
           button::before {
             width: 95px;
-            height: 5px;
+            height: 4px;
             border: none;
             background: transparent;
           }
@@ -97,6 +93,19 @@
   &.green {
     .Story-container {
       background: #00ff29;
+
+      .slick-arrow {
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)
+          ),
+          rgba(255, 255, 255, 0.08);
+
+        &:hover {
+          background: #121212;
+        }
+      }
 
       .icon {
         background: rgba(255, 255, 255, 0.9);
@@ -116,6 +125,19 @@
   &.white {
     .Story-container {
       background: #fff;
+
+      .slick-arrow {
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)
+          ),
+          rgba(255, 255, 255, 0.08);
+
+        &:hover {
+          background: #121212;
+        }
+      }
 
       .icon {
         background: rgba(0, 0, 0, 0.12);

@@ -4,7 +4,6 @@ import LinkUploader from './LinkUploader'
 
 const url = 'http://localhost:3000'
 const csrfToken = document.querySelector("[name='csrf-token']").content
-const imgContainer = document.getElementById('tab-img-preview')
 
 export default class TabControls extends Component {
   constructor(props) {
@@ -13,11 +12,13 @@ export default class TabControls extends Component {
     this.state = { displayLinkUploader: false }
   }
 
-  handleUp = target => {
+  handleImgUp = e => {
+    e.preventDefault()
+    e.stopPropagation()
     const { position } = this.props
-    if (target.files && target.files[0]) {
+    if (e.target.files && e.target.files[0]) {
       const formData = new FormData()
-      formData.append('image', target.files[0])
+      formData.append('image', e.target.files[0])
       formData.append('position', position)
       fetch(`${url}/newimage`, {
         credentials: 'same-origin',
@@ -30,8 +31,9 @@ export default class TabControls extends Component {
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data)
-          imgContainer.src = data.img.link.url
+          const url = data.img.link.url
+          this.props.changeTabPreview('img', url)
+          // const imgContainer = document.getElementById('tab-img-preview')
         })
     }
   }
@@ -50,7 +52,7 @@ export default class TabControls extends Component {
           type="file"
           name="file"
           id="file"
-          onChange={e => handleUp(e.target)}
+          onChange={e => this.handleImgUp(e)}
         />
         <label for="file"></label>
         <div className="icon" onClick={() => this.toggleLinkUploader(true)}>
@@ -58,6 +60,7 @@ export default class TabControls extends Component {
         </div>
         {displayLinkUploader && (
           <LinkUploader
+            changeTabPreview={this.props.changeTabPreview}
             position={position}
             toggleLinkUploader={this.toggleLinkUploader}
           />

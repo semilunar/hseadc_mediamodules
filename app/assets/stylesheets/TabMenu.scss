@@ -154,10 +154,18 @@
         transition: background 0.5s ease;
         background-size: cover;
 
-        iframe {
+        iframe,
+        #tab-img-preview {
           width: 100%;
           height: 100%;
           border-radius: 36px;
+        }
+
+        .tab-placeholder {
+          width: 100%;
+          height: 100%;
+          background-image: url('placeholder-tab.png');
+          background-size: cover;
         }
       }
     }
