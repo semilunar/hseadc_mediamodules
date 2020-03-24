@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   post 'setmask',        to: 'video_attachment#set_mask'
   post 'setvideomask',   to: 'video_attachment#set_video_mask'
   post 'setvideocustom', to: 'video_attachment#set_video_custom'
+
+  post 'getsliderimg',        to: 'slider_attachment#get_by_kind'
+  post 'newsliderimg',        to: 'slider_attachment#create'
 end

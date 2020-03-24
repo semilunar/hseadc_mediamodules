@@ -19,7 +19,6 @@ export default class VideoMask extends React.Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
     fetch(`${url}/videomask`, {
       method: 'GET',
       headers: {

@@ -5,6 +5,9 @@ import Img2 from '../../assets/images/scroll2.jpg'
 import Img3 from '../../assets/images/scroll3.jpg'
 import Img4 from '../../assets/images/scroll4.jpg'
 
+const url = 'http://localhost:3000'
+const csrfToken = document.querySelector("[name='csrf-token']").content
+
 export default class InnerScroll extends React.Component {
   constructor(props) {
     super(props)
@@ -12,9 +15,9 @@ export default class InnerScroll extends React.Component {
     this.state = {
       activeImg: Img1,
       imgList: [Img1, Img2, Img3, Img4],
-      // height: document.getElementsByClassName("scroll").scrollHeight,
       scrollTop: 0,
-      hover: false
+      hover: false,
+      kind: 'InnerScroll'
     }
 
     this.handleScroll = this.handleScroll.bind(this)
@@ -22,6 +25,30 @@ export default class InnerScroll extends React.Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    const { kind } = this.state
+
+    fetch(`${url}/getsliderimg`, {
+      method: 'POST',
+      headers: {
+        'X-CSRF-Token': csrfToken,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ kind })
+    })
+      .then(res => res.json())
+      .then(data => {
+        const images = data.slides
+          .sort((a, b) => a.position - b.position)
+          .map(slide => {
+            return { link: slide.link.url }
+            // return (
+            //   <div>
+            //     <img src={slide.link.url} className="slider-img" />
+            //   </div>
+            // )
+          })
+        this.setState({ images })
+      })
   }
 
   componentWillUnmount() {
