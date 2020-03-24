@@ -9,6 +9,7 @@ export default class TabControls extends Component {
   constructor(props) {
     super(props)
 
+    this.fileUpload = React.createRef()
     this.state = { displayLinkUploader: false }
   }
 
@@ -42,33 +43,48 @@ export default class TabControls extends Component {
     this.setState({ displayLinkUploader: bool })
   }
 
+  handleClick = () => {
+    console.log(this.fileUpload)
+    this.fileUpload.click()
+  }
+
   render() {
-    const { position } = this.props
+    const { position, handleDeleteTab, changeTabPreview } = this.props
     const { displayLinkUploader } = this.state
     return (
       <div className="tab-controls">
         <input
+          ref={this.fileUpload}
+          // ref={input => (this.fileUpload = input)}
           className="icon img-upload-control"
           type="file"
           name="file"
-          id="file"
-          onChange={e => this.handleImgUp(e)}
+          id={`file-${position}`}
+          onChange={this.handleImgUp}
         />
-        <label for="file"></label>
+        <label htmlFor={`file-${position}`} onClick={this.handleClick}></label>
         <div className="icon" onClick={() => this.toggleLinkUploader(true)}>
           <div className="icon-vector link-upload-control"></div>
         </div>
         {displayLinkUploader && (
           <LinkUploader
-            changeTabPreview={this.props.changeTabPreview}
+            changeTabPreview={changeTabPreview}
             position={position}
             toggleLinkUploader={this.toggleLinkUploader}
           />
         )}
         <div className="icon">
-          <div className="icon-vector delete-control"></div>
+          <div
+            className="icon-vector delete-control"
+            onClick={() => handleDeleteTab(position)}
+          ></div>
         </div>
       </div>
     )
   }
 }
+
+// <div
+//   style={{ background: 'blue', width: 30, height: 30 }}
+//   onClick={this.handleClick}
+// >

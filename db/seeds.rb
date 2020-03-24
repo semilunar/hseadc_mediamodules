@@ -1,8 +1,6 @@
 def create_tab_attachments
-  TabAttachment.create(title: '1 iframe', link: 'https://readymag.com/semilunar/koinonia/')
-  TabAttachment.create(title: '2 видео', link: 'https://youtu.be/labQqXbp_HU')
-  TabAttachment.create(title: '3 видео', link: 'https://www.youtube.com/embed/Vtr2jFJjNqI')
-  TabAttachment.create(title: '4 видео', link: 'https://www.youtube.com/watch?v=BWXWivwhi14')
+  TabAttachment.create(title: '2 video', link: 'https://youtu.be/ql0DZUAfPOs', position: 2)
+  TabAttachment.create(title: '3 iframe', link: 'https://readymag.com/semilunar/koinonia/', position: 1)
 end
 
 def drop_db

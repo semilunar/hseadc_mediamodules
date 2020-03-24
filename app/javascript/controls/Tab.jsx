@@ -9,28 +9,38 @@ const Tab = ({
   current,
   n,
   position,
-  changeTabPreview
+  changeTabPreview,
+  handleNewTitle,
+  handleDeleteTab
 }) => {
   const [newTitle, setNewTitle] = useState(title)
 
   const classes = classnames({
     ['Tab-block']: true,
-    active: title === current
+    active: position === current
   })
+
+  const clickTab = e => {
+    // e.stopPropagation()
+    e.preventDefault()
+
+    handleTab(link, position)
+  }
 
   return (
     <div
       className={classes}
       style={{ height: `calc(100% / ${n} - 1px)` }}
-      onClick={() => handleTab(link, title)}
+      onClick={clickTab}
     >
       <textarea
         className="Tab-title"
-        value={newTitle}
+        value={newTitle || ''}
         rows="2"
         placeholder="What’s inside?"
         onChange={e => setNewTitle(e.target.value)}
         type="text"
+        onBlur={() => handleNewTitle(newTitle, position)}
       ></textarea>
 
       <div className="container-link-preview">
@@ -38,7 +48,11 @@ const Tab = ({
         <a className="Tab-link-preview">{link}</a>
       </div>
 
-      <TabControls changeTabPreview={changeTabPreview} position={position} />
+      <TabControls
+        changeTabPreview={changeTabPreview}
+        position={position}
+        handleDeleteTab={handleDeleteTab}
+      />
     </div>
   )
 }

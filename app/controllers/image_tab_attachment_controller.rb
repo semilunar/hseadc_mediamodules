@@ -2,6 +2,11 @@ class ImageTabAttachmentController < ApplicationController
   def create
     position = params[:position]
 
+    link = VideoTabAttachment.find_by(position: position)
+    if link
+      link.destroy
+    end
+
     newImage = ImageTabAttachment.find_or_create_by(position: position)
     newImage.link = params[:image]
     newImage.save
@@ -14,7 +19,7 @@ class ImageTabAttachmentController < ApplicationController
       puts "something goes wrong"
       redirect_to :back
     end
-    
+
     # if TabAttachment.exists?(position: position)
     #
     # end

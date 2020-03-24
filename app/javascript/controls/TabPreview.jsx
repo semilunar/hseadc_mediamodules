@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
 
-const TabPreview = ({ preview, displayUrl }) => {
+const TabPreview = ({ preview, url }) => {
+  const displayUrl =
+    url &&
+    url
+      .replace('watch?v=', 'embed/')
+      .replace('youtu.be', 'www.youtube.com/embed/') + '?controls=0'
+
+  if (displayUrl) preview = displayUrl.match(/jpeg|jpg|png/) ? 'img' : 'iframe'
+
   if (preview === 'iframe')
     return (
       <>
         {displayUrl && (
           <iframe
             src={displayUrl}
-            frameborder="0"
+            frameBorder="0"
             controls="0"
-            autoplay="0"
+            autoPlay="0"
             muted
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         )}
       </>
