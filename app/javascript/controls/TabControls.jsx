@@ -68,7 +68,8 @@ export default class TabControls extends Component {
         </div>
         {displayLinkUploader && (
           <LinkUploader
-            changeTabPreview={changeTabPreview}
+            endpoint="newlink"
+            changePreview={changeTabPreview}
             position={position}
             toggleLinkUploader={this.toggleLinkUploader}
           />

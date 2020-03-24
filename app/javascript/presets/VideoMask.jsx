@@ -4,18 +4,52 @@ import ReactPlayer from 'react-player'
 import ButtonSet from '../controls/ButtonSet'
 import LinkUploader from '../controls/LinkUploader'
 
+const url = 'http://localhost:3000'
+const csrfToken = document.querySelector("[name='csrf-token']").content
+
 export default class VideoMask extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      mask: 'maskDiamond',
+      mask: null,
+      link: null,
       displayLinkUploader: false
     }
     this.handleClick = this.handleClick.bind(this)
   }
 
+  componentDidMount() {
+    console.log('componentDidMount')
+    fetch(`${url}/videomask`, {
+      method: 'GET',
+      headers: {
+        'X-CSRF-Token': csrfToken,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(parsed => {
+        const mask = parsed.mask.link
+        const link = parsed.video.link
+
+        this.setState({ mask, link })
+      })
+      .catch(e => console.log(e))
+  }
+
+  setMask = mask => {
+    fetch(`${url}/setmask`, {
+      method: 'POST',
+      headers: {
+        'X-CSRF-Token': csrfToken,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ mask })
+    })
+  }
+
   handleClick(option) {
-    const { mask } = this.state
+    this.setMask(option)
     this.setState({ mask: option })
   }
 
@@ -23,8 +57,12 @@ export default class VideoMask extends React.Component {
     this.setState({ displayLinkUploader: bool })
   }
 
+  setLink = (a, link) => {
+    this.setState({ link })
+  }
+
   render() {
-    const { mask, handleClick, displayLinkUploader } = this.state
+    const { mask, handleClick, displayLinkUploader, link } = this.state
     const set = [
       'maskStar2',
       'maskStar',
@@ -37,16 +75,18 @@ export default class VideoMask extends React.Component {
     return (
       <div className="Preset VideoMask">
         <div className="Preset-container">
-          <ReactPlayer
-            className={mask}
-            url="https://vimeo.com/344429704"
-            playing
-            loop={true}
-            controls={false}
-            muted={true}
-            width="1150px"
-            height="710px"
-          />
+          {link && (
+            <ReactPlayer
+              className={mask}
+              url={link}
+              playing
+              loop={true}
+              controls={false}
+              muted={true}
+              width="1150px"
+              height="710px"
+            />
+          )}
           <ButtonSet set={set} value={mask} handleClick={this.handleClick} />
 
           <div className="placeholder">
@@ -60,7 +100,11 @@ export default class VideoMask extends React.Component {
           </div>
 
           {displayLinkUploader && (
-            <LinkUploader toggleLinkUploader={this.toggleLinkUploader} />
+            <LinkUploader
+              endpoint="setvideomask"
+              changePreview={this.setLink}
+              toggleLinkUploader={this.toggleLinkUploader}
+            />
           )}
         </div>
       </div>

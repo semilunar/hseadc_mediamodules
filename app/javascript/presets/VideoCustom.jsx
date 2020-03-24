@@ -5,7 +5,7 @@ import LinkUploader from '../controls/LinkUploader'
 
 import Koinonia from '../../assets/videos/Koinonia.mp4'
 
-export default class CustomVideo extends React.Component {
+export default class VideoCustom extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -52,7 +52,7 @@ export default class CustomVideo extends React.Component {
     const { paused, playButton, displayLinkUploader } = this.state
 
     return (
-      <div className="Preset CustomVideo">
+      <div className="Preset VideoCustom">
         <div className="Preset-container">
           <video
             className="viewer"

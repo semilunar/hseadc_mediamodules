@@ -1,21 +1,18 @@
 import React from 'react'
 
+import TabMenu from '../presets/TabMenu'
 import VideoMask from '../presets/VideoMask'
+import VideoCustom from '../presets/VideoCustom'
 import HorizontalScroll from '../presets/HorizontalScroll'
-import Split from '../presets/Split'
-import Flip from '../presets/Flip'
-import Scroll from '../presets/Scroll'
-import CustomVideo from '../presets/CustomVideo'
+import InnerScroll from '../presets/InnerScroll'
 import SliderDots from '../presets/SliderDots'
 import SliderArrows from '../presets/SliderArrows'
 import SliderStory from '../presets/SliderStory'
-import TabMenu from '../presets/TabMenu'
 
 import ImgUploader from '../controls/ImgUploader'
 
-import Draggable, { DraggableCore } from 'react-draggable'
-
-import Symbol from '../../assets/images/symbol.svg'
+// import Draggable, { DraggableCore } from 'react-draggable'
+// import Symbol from '../../assets/images/symbol.svg'
 
 export default class Page extends React.Component {
   render() {
@@ -27,17 +24,16 @@ export default class Page extends React.Component {
         {/*<Draggable>
           <div className="draggable" style={dragStyle}></div>
         </Draggable>
-        <CustomVideo />
-        <Scroll />
-        <SliderDots />
-        <SliderArrows />
-        <Split />
-        <HorizontalScroll />
-        <VideoMask />
-        <CustomVideo />
         */}
+
         <TabMenu />
         <SliderStory />
+        <VideoMask />
+        <VideoCustom />
+        <InnerScroll />
+        <SliderDots />
+        <SliderArrows />
+        <HorizontalScroll />
       </div>
     )
   }

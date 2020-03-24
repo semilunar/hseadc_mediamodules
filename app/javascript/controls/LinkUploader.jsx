@@ -5,23 +5,32 @@ import Button from './Button'
 const url = 'http://localhost:3000'
 const csrfToken = document.querySelector("[name='csrf-token']").content
 
-const LinkUploader = ({ toggleLinkUploader, changeTabPreview, position }) => {
+const LinkUploader = ({
+  toggleLinkUploader,
+  changePreview,
+  position,
+  endpoint
+}) => {
   const [link, setLink] = useState('')
 
   const linkSubmit = () => {
-    fetch(`${url}/newlink`, {
+    fetch(`${url}/${endpoint}`, {
       credentials: 'same-origin',
       method: 'POST',
       headers: {
         'X-CSRF-Token': csrfToken,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ position, link })
+      body: position
+        ? JSON.stringify({ position, link })
+        : JSON.stringify({ link })
     })
       .then(res => res.json())
       .then(data => {
         const url = data.link.link
-        changeTabPreview('iframe', url)
+        console.log(url)
+        console.log(data)
+        changePreview('iframe', url)
         toggleLinkUploader(false)
       })
   }

@@ -22,7 +22,7 @@ const Tab = ({
 
   const clickTab = e => {
     // e.stopPropagation()
-    e.preventDefault()
+    // e.preventDefault()
 
     handleTab(link, position)
   }
@@ -38,6 +38,10 @@ const Tab = ({
         value={newTitle || ''}
         rows="2"
         placeholder="What’s inside?"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
         onChange={e => setNewTitle(e.target.value)}
         type="text"
         onBlur={() => handleNewTitle(newTitle, position)}

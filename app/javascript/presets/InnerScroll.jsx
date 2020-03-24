@@ -5,7 +5,7 @@ import Img2 from '../../assets/images/scroll2.jpg'
 import Img3 from '../../assets/images/scroll3.jpg'
 import Img4 from '../../assets/images/scroll4.jpg'
 
-export default class Scroll extends React.Component {
+export default class InnerScroll extends React.Component {
   constructor(props) {
     super(props)
     this.myRef = React.createRef()

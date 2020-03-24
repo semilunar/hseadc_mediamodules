@@ -117,6 +117,7 @@ export default class TabMenu extends React.Component {
             )}
             <div className="new-tab" onClick={this.handleNewTab}>
               Add tab
+              <span></span>
             </div>
           </div>
           <div className="Split-half right">

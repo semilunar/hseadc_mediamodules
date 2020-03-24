@@ -1,0 +1,2 @@
+class VideoAttachment < ApplicationRecord
+end
