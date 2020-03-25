@@ -13,7 +13,6 @@ const ImageUploader = props => {
         method: 'POST',
         headers: {
           'X-CSRF-Token': csrfToken
-          // 'Content-Type': 'application/json'
         },
         body: formData
       })

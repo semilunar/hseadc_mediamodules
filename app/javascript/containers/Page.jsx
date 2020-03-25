@@ -30,9 +30,9 @@ export default class Page extends React.Component {
         <SliderStory />
         <VideoMask />
         <VideoCustom />
-        <InnerScroll />
         <SliderDots />
         <SliderArrows />
+        <InnerScroll />
         <HorizontalScroll />
       </div>
     )
